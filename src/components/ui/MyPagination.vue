@@ -1,7 +1,6 @@
 <template>
     <div class="pagination">
-        <button class="pagination__button pagination__button--prev" @click="$emit('prev')"
-            :disabled="currentPage === 1">
+        <button class="pagination__button pagination__button--prev" @click="$emit('prev')" :disabled="currentPage === 1">
             <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M5.80474 11.1381C6.06509 10.8778 6.06509 10.4557 5.80474 10.1953L1.60947 6.00004L5.80474 1.80478C6.06509 1.54443 6.06509 1.12232 5.80474 0.861969C5.54439 0.60162 
@@ -73,7 +72,11 @@ $aquamarine: #279fb9;
 $grey: #f5f5f5;
 
 .pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 8px;
     font-size: 16px;
@@ -82,13 +85,46 @@ $grey: #f5f5f5;
     margin-top: 52px;
 
     & &__button {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 10px;
+        -webkit-transition: 300ms;
+        -o-transition: 300ms;
+        transition: 300ms;
+
+        svg {
+            path {
+                -webkit-transition: 300ms;
+                -o-transition: 300ms;
+                transition: 300ms;
+            }
+        }
+
+        &:hover {
+            color: $aquamarine;
+
+            svg {
+                path {
+                    fill: $aquamarine;
+                }
+            }
+        }
+
+        &:disabled {
+            pointer-events: none;
+        }
     }
 
     & &__list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 4px;
 
@@ -96,6 +132,8 @@ $grey: #f5f5f5;
             &-button {
                 border-radius: 7px;
                 padding: 4px 5px;
+                -webkit-transition: 300ms;
+                -o-transition: 300ms;
                 transition: 300ms;
                 min-width: 29px;
                 text-align: center;
@@ -107,6 +145,7 @@ $grey: #f5f5f5;
                 &.active {
                     color: $white;
                     background-color: $aquamarine;
+                    pointer-events: none;
                 }
             }
         }

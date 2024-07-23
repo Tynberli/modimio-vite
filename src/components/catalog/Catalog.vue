@@ -3,14 +3,14 @@
         <div class="container">
             <div class="catalog__top">
                 <h1 class="catalog__top-title">{{ selectedCategory ? selectedCategory.title : 'Каталог' }}</h1>
-                <span class="catalog__top-item">{{ filteredCards.length }} товара</span>
+                <span class="catalog__top-item">{{ filteredCards.length }} {{ getDeclension(filteredCards.length) }}</span>
             </div>
             <div class="catalog__content">
                 <div class="catalog__content-category">
                     <h4 class="catalog__content-category-title">Категории</h4>
-                    <ul class="catalog__content-category-list">
+                    <ul :class="{'catalog__content-category-list': true, category: selectedCategory}">
                         <li v-if="selectedCategory" class="catalog__content-category-list-item">
-                            <button class="catalog__content-category-list-item-button" @click="selectCategory(null)">
+                            <button class="catalog__content-category-list-item-button subcategory" @click="selectCategory(null)">
                                 <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -124,6 +124,11 @@ export default {
             if (page >= 1 && page <= this.totalPages) {
                 this.currentPage = page;
             }
+        },
+        getDeclension(count) {
+            const cases = [2, 0, 1, 1, 1, 2];
+            const titles = ['товар', 'товара', 'товаров'];
+            return titles[(count % 100 > 4 && count % 100 < 20) ? 2 : cases[(count % 10 < 5) ? count % 10 : 5]];
         }
     }
 }

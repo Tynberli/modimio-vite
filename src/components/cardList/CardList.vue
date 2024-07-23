@@ -1,6 +1,6 @@
 <template>
     <div v-if="cards.length === 0" class="no-cards-message">
-        <h2 class="h1">Товаров нет</h2><!-- если cards.length === 0 то выводим это-->
+        <h2 class="h1">Товаров нет</h2>
     </div>
     <div v-else class="wrap">
         <div class="catalog__content-cards-interractive">
@@ -27,7 +27,9 @@
             </button>
         </div>
         <ul class="catalog__content-cards-list">
-            <card-item v-for="card in paginatedCards" :key="card.id" :card="card"></card-item>
+            <transition-group name="card-list">
+                <card-item v-for="card in paginatedCards" :key="card.id" :card="card"></card-item>
+            </transition-group>
         </ul>
         <my-pagination v-if="shouldShowPagination" :currentPage="currentPage" :totalPages="totalPages" @prev="prevPage"
             @next="nextPage" @setPage="setPage">
@@ -95,4 +97,23 @@ export default {
 
 <style scoped>
 .no-cards-message {}
+
+.card-list-item {
+    display: inline-block;
+}
+
+.card-list-enter-active,
+.card-list-leave-active {
+    transition: all 0.5s ease;
+}
+
+.card-list-enter-from,
+.card-list-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.card-list-move {
+    transition: transform 0.8s ease;
+}
 </style>

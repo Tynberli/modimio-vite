@@ -9,7 +9,7 @@ const cardData = [
                 "children": [
                     {
                         "id": 3,
-                        "title": 'Боинг',
+                        "title": 'Боинг adasdasd',
                         "price": '2300',
                         "img": './img/excavator.jpg',
                         "children": []
@@ -255,7 +255,32 @@ const cardData = [
                 ]
             },
         ]
-    }
+    },
+    {
+        "id": 39,
+        "title": "Корабли",
+        "children": [
+            {
+                "id": 40,
+                "title": 'Парусники',
+                "children": [
+                ]
+            },
+            {
+                "id": 41,
+                "title": 'Авианосцы',
+                "children": [
+                    {
+                        "id": 42,
+                        "title": 'Авианосец 1',
+                        "price": '12500',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
 ];
 
 export default cardData;
