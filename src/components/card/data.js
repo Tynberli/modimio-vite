@@ -11,21 +11,21 @@ const cardData = [
                         "id": 3,
                         "title": 'Боинг',
                         "price": '2300',
-                        "img": '/img/excavator.jpg',
+                        "img": './img/excavator.jpg',
                         "children": []
                     },
                     {
                         "id": 4,
                         "title": 'Боинг 2',
                         "price": '2400',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 5,
                         "title": 'Боинг 3',
                         "price": '2500',
-                        "img": '/img/excavator.jpg',
+                        "img": './img/excavator.jpg',
                         "children": []
                     }
                 ]
@@ -38,21 +38,21 @@ const cardData = [
                         "id": 7,
                         "title": 'Апач 1',
                         "price": '2500',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                     {
                         "id": 8,
                         "title": 'Апач 2',
                         "price": '2400',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 9,
                         "title": 'Апач 3',
                         "price": '2900',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                 ]
@@ -71,14 +71,14 @@ const cardData = [
                         "id": 12,
                         "title": 'Лада 1',
                         "price": '5400',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 13,
                         "title": 'Лада 2',
                         "price": '3500',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                 ]
@@ -91,14 +91,14 @@ const cardData = [
                         "id": 15,
                         "title": 'Камаз',
                         "price": '5400',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 16,
                         "title": 'Белаз',
                         "price": '3500',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                 ]
@@ -117,21 +117,21 @@ const cardData = [
                         "id": 19,
                         "title": 'Горный 1',
                         "price": '35002',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                     {
                         "id": 20,
                         "title": 'Горный 2',
                         "price": '35123',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 21,
                         "title": 'Горный 3',
                         "price": '123123',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                 ]
@@ -144,35 +144,112 @@ const cardData = [
                         "id": 23,
                         "title": 'Скоростной 1',
                         "price": '3100',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                     {
                         "id": 24,
                         "title": 'Скоростной 2',
                         "price": '3200',
-                        "img": '/img/fire-engine.jpg',
+                        "img": './img/fire-engine.jpg',
                         "children": []
                     },
                     {
                         "id": 25,
                         "title": 'Скоростной 3',
                         "price": '35400',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                     {
                         "id": 26,
                         "title": 'Скоростной 3',
                         "price": '35500',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                     {
                         "id": 27,
                         "title": 'Скоростной 3',
                         "price": '35600',
-                        "img": '/img/truck.jpg',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 28,
+                        "title": 'Скоростной 1',
+                        "price": '3100',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 29,
+                        "title": 'Скоростной 2',
+                        "price": '3200',
+                        "img": './img/fire-engine.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 30,
+                        "title": 'Скоростной 3',
+                        "price": '35400',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 31,
+                        "title": 'Скоростной 3',
+                        "price": '35500',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 32,
+                        "title": 'Скоростной 3',
+                        "price": '35600',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 33,
+                        "title": 'Скоростной 3',
+                        "price": '35600',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 34,
+                        "title": 'Скоростной 1',
+                        "price": '3100',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 35,
+                        "title": 'Скоростной 2',
+                        "price": '3200',
+                        "img": './img/fire-engine.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 36,
+                        "title": 'Скоростной 3',
+                        "price": '35400',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 37,
+                        "title": 'Скоростной 3',
+                        "price": '35500',
+                        "img": './img/truck.jpg',
+                        "children": []
+                    },
+                    {
+                        "id": 38,
+                        "title": 'Скоростной 3',
+                        "price": '35600',
+                        "img": './img/truck.jpg',
                         "children": []
                     },
                 ]

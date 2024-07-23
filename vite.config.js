@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
-
-// Настройка Vite для проекта Vue.js
 export default defineConfig({
-  plugins: [vue()],
+  base: './',
+  plugins: [
+    vue(),
+  ],
   server: {
     port: 3000,
     open: true
@@ -12,8 +13,21 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'src/main.js',
+        main: 'index.html',
       },
-    },
-  },
-})
+      output: {
+        entryFileNames: 'js/[name].js',
+        chunkFileNames: 'js/[name].js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.css')) {
+            return 'style/[name][extname]';
+          }
+          if (/\.(png|jpe?g|gif|svg)$/.test(assetInfo.name)) {
+            return 'img/[name][extname]';
+          }
+          return '[name][extname]';
+        }
+      }
+    }
+  }
+});
