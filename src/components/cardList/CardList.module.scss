@@ -1,0 +1,24 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cards-list {
+    display: grid;
+    justify-content: center;
+    //grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 24px 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &-item {
+        display: flex;
+    }
+}

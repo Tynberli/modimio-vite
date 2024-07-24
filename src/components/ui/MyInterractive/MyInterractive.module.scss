@@ -1,0 +1,12 @@
+.interractive {
+    display: flex;
+    gap: 10px;
+    
+
+    & &__button {
+
+        &--grid {}
+
+        &--square {}
+    }
+}

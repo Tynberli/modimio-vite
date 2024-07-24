@@ -1,63 +1,34 @@
 <template>
-    <div v-if="cards.length === 0" class="no-cards-message">
+    <div v-if="cards.length === 0">
         <h2 class="h1">Товаров нет</h2>
     </div>
     <div v-else class="wrap">
-        <div class="catalog__content-cards-interractive">
-            <button>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="3" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="9.35303" y="3" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="15.7058" y="3" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="3" y="9.35001" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="9.35303" y="9.35001" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="15.7058" y="9.35001" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="3" y="15.7" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="9.35303" y="15.7" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                    <rect x="15.7058" y="15.7" width="5.29412" height="5.29" rx="1" fill="#279FB9" />
-                </svg>
-            </button>
-            <button>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="3" width="8" height="8" rx="2" fill="#E0E0E0" />
-                    <rect x="3" y="13" width="8" height="8" rx="2" fill="#E0E0E0" />
-                    <rect x="13" y="3" width="8" height="8" rx="2" fill="#E0E0E0" />
-                    <rect x="13" y="13" width="8" height="8" rx="2" fill="#E0E0E0" />
-                </svg>
-            </button>
-        </div>
-        <ul class="catalog__content-cards-list">
-            <transition-group name="card-list">
-                <card-item v-for="card in paginatedCards" :key="card.id" :card="card"></card-item>
-            </transition-group>
+        <my-interractive style="justify-content: end; margin-bottom: 12px;" />
+        <ul class="cards-list">
+            <card-item v-for="card in paginatedCards" :key="card.id" :card="card" />
         </ul>
         <my-pagination v-if="shouldShowPagination" :currentPage="currentPage" :totalPages="totalPages" @prev="prevPage"
-            @next="nextPage" @setPage="setPage">
-        </my-pagination>
+            @next="nextPage" @setPage="setPage" />
     </div>
 </template>
 
-
-
 <script>
 import CardItem from '../../components/card/CardItem.vue';
-import MyPagination from '../../components/ui/MyPagination.vue';
 
 export default {
     components: {
         CardItem,
-        MyPagination
     },
     props: {
         cards: {
             type: Array,
-            required: true
-        }
+            required: true,
+        },
     },
     data() {
         return {
             currentPage: 1,
-            itemsPerPage: 10
+            itemsPerPage: 10,
         };
     },
     computed: {
@@ -71,7 +42,7 @@ export default {
         },
         shouldShowPagination() {
             return this.cards.length > this.itemsPerPage;
-        }
+        },
     },
     methods: {
         prevPage() {
@@ -88,32 +59,11 @@ export default {
             if (page >= 1 && page <= this.totalPages) {
                 this.currentPage = page;
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
-
-
-<style scoped>
-.no-cards-message {}
-
-.card-list-item {
-    display: inline-block;
-}
-
-.card-list-enter-active,
-.card-list-leave-active {
-    transition: all 0.5s ease;
-}
-
-.card-list-enter-from,
-.card-list-leave-to {
-    opacity: 0;
-    transform: translateX(-30px);
-}
-
-.card-list-move {
-    transition: transform 0.8s ease;
-}
+<style scoped lang="scss">
+@import 'CardList.module.scss';
 </style>

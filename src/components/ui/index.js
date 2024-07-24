@@ -1,7 +1,9 @@
-//import MyButton from "./MyButton.vue";
-import MyPagination from "./MyPagination.vue";
+import MyButton from "./MyButton/MyButton.vue";
+import MyPagination from "./MyPagination/MyPagination.vue";
+import MyInterractive from "./MyInterractive/MyInterractive.vue"
 
 export default [
-    //MyButton,
-    MyPagination
+    MyButton,
+    MyPagination,
+    MyInterractive
 ]

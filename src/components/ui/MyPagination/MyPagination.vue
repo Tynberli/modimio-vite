@@ -1,6 +1,7 @@
 <template>
     <div class="pagination">
-        <button class="pagination__button pagination__button--prev" @click="$emit('prev')" :disabled="currentPage === 1">
+        <button class="pagination__button pagination__button--prev" @click="$emit('prev')"
+            :disabled="currentPage === 1">
             <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M5.80474 11.1381C6.06509 10.8778 6.06509 10.4557 5.80474 10.1953L1.60947 6.00004L5.80474 1.80478C6.06509 1.54443 6.06509 1.12232 5.80474 0.861969C5.54439 0.60162 
@@ -9,7 +10,6 @@
             </svg>
             <span>Предыдущая</span>
         </button>
-
         <ul class="pagination__list">
             <li class="pagination__list-item">
                 <button class="pagination__list-item-button" @click="$emit('setPage', 1)"
@@ -24,7 +24,6 @@
                     :class="{ active: currentPage === totalPages }">{{ totalPages }}</button>
             </li>
         </ul>
-
         <button class="pagination__button pagination__button--next" @click="$emit('next')"
             :disabled="currentPage === totalPages">
             <span>Следующая</span>
@@ -39,6 +38,7 @@
 
 <script>
 export default {
+    name: 'my-pagination',
     props: {
         currentPage: {
             type: Number,
@@ -65,90 +65,7 @@ export default {
 }
 </script>
 
+
 <style scoped lang="scss">
-$white: #ffffff;
-$black: #333;
-$aquamarine: #279fb9;
-$grey: #f5f5f5;
-
-.pagination {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    line-height: 150%;
-    color: $black;
-    margin-top: 52px;
-
-    & &__button {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: 10px;
-        -webkit-transition: 300ms;
-        -o-transition: 300ms;
-        transition: 300ms;
-
-        svg {
-            path {
-                -webkit-transition: 300ms;
-                -o-transition: 300ms;
-                transition: 300ms;
-            }
-        }
-
-        &:hover {
-            color: $aquamarine;
-
-            svg {
-                path {
-                    fill: $aquamarine;
-                }
-            }
-        }
-
-        &:disabled {
-            pointer-events: none;
-        }
-    }
-
-    & &__list {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: 4px;
-
-        &-item {
-            &-button {
-                border-radius: 7px;
-                padding: 4px 5px;
-                -webkit-transition: 300ms;
-                -o-transition: 300ms;
-                transition: 300ms;
-                min-width: 29px;
-                text-align: center;
-
-                &:hover {
-                    background: $grey;
-                }
-
-                &.active {
-                    color: $white;
-                    background-color: $aquamarine;
-                    pointer-events: none;
-                }
-            }
-        }
-    }
-}
+@import 'MyPagination.module.scss';
 </style>

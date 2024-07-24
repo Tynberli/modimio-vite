@@ -1,8 +1,5 @@
 <template>
-    <div class="app">
-        <catalog/>
-
-    </div>
+    <catalog />
 </template>
 
 <script>
